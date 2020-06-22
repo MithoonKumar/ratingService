@@ -11,6 +11,7 @@ create table rating (
     comment varchar(200),
     imageUrl varchar(50),
     starRating int not null check(starRating >=1 and starRating <=5),
+    createdAt datetime not null default(now()),
     primary key(userId, furnitureId),
     foreign key (furnitureId) REFERENCES furniture(furnitureId)
 );
